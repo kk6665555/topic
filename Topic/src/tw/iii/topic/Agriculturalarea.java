@@ -2,15 +2,14 @@ package tw.iii.topic;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 public class Agriculturalarea {
-	private String ID,gid,Name,Tel,Introduction
-		,TrafficGuidelines,Address,OpenHours,City
-			,Town,Coordinate,Photo;
-	
 	private Connection conn;
 	private Statement stmt;
 	
@@ -23,105 +22,41 @@ public class Agriculturalarea {
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		conn = DriverManager.getConnection(
 				"jdbc:sqlserver://localhost:1433;",prop);
+		stmt=conn.createStatement();
+		
 	}
 	
-	public String getID() {
-		return ID;
-	}
-
-	public void setID(String iD) {
-		ID = iD;
-	}
-
-	public String getGid() {
-		return gid;
-	}
-
-	public void setGid(String gid) {
-		this.gid = gid;
-	}
-
-	public String getName() {
-		return Name;
-	}
-
-	public void setName(String name) {
-		Name = name;
-	}
-
-	public String getTel() {
-		return Tel;
-	}
-
-	public void setTel(String tel) {
-		Tel = tel;
-	}
-
-	public String getIntroduction() {
-		return Introduction;
-	}
-
-	public void setIntroduction(String introduction) {
-		Introduction = introduction;
-	}
-
-	public String getTrafficGuidelines() {
-		return TrafficGuidelines;
-	}
-
-	public void setTrafficGuidelines(String trafficGuidelines) {
-		TrafficGuidelines = trafficGuidelines;
-	}
-
-	public String getAddress() {
-		return Address;
-	}
-
-	public void setAddress(String address) {
-		Address = address;
-	}
-
-	public String getOpenHours() {
-		return OpenHours;
-	}
-
-	public void setOpenHours(String openHours) {
-		OpenHours = openHours;
-	}
-
-	public String getCity() {
-		return City;
-	}
-
-	public void setCity(String city) {
-		City = city;
-	}
-
-	public String getTown() {
-		return Town;
-	}
-
-	public void setTown(String town) {
-		Town = town;
-	}
-
-	public String getCoordinate() {
-		return Coordinate;
-	}
-
-	public void setCoordinate(String coordinate) {
-		Coordinate = coordinate;
-	}
-
-	public String getPhoto() {
-		return Photo;
-	}
-
-	public void setPhoto(String photo) {
-		Photo = photo;
-	}
+	public List<data> chick1(String city) {
+		String sql="SELECT * FROM Agriculturalproducts WHERE CITY LIKE '%"+city+"%'";
+		ResultSet rs = null;
+		List<data> list = new ArrayList<>();
 	
-	
+		try {
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				data data = new data();
+				data.setID(rs.getString(1));
+				data.setGid(rs.getString(2));
+				data.setName(rs.getString(3));
+				data.setTel(rs.getString(4));
+				data.setIntroduction(rs.getString(5));
+				data.setTrafficGuidelines(rs.getString(6));
+				data.setAddress(rs.getString(7));
+				data.setOpenHours(rs.getString(8));
+				data.setCity(rs.getString(9));
+				data.setTown(rs.getString(10));
+				data.setCoordinate(rs.getString(11));
+				data.setPhoto(rs.getString(12));
+				list.add(data);
+			}
+			conn.close();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+		return list;
+		
+	}
 	
 	
 }

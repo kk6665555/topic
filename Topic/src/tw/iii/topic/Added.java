@@ -70,7 +70,7 @@ public class Added extends HttpServlet {
 				pstmt.setString(10, Coordinate);
 				pstmt.setString(11, Photo);
 				pstmt.execute();
-				System.out.println(Name);
+				System.out.println("OK");
 			}
 			
 			
