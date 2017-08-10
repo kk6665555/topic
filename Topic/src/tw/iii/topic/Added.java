@@ -26,7 +26,8 @@ import org.json.JSONObject;
 public class Added extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//農產品網址
-		String strURL="http://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvAttractions.aspx";
+//		String strURL="http://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvAttractions.aspx";
+		String strURL="http://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvAgriculturalProduce.aspx";
 		String json = getJSONString(strURL);
 		//帳號密碼資料庫位置設定
 		Properties prop = new Properties();
@@ -34,13 +35,57 @@ public class Added extends HttpServlet {
 		prop.setProperty("password","8877560");
 		prop.setProperty("databaseName", "topic");
 		//資料庫連線
+//		try {
+//			//sql驅動程式載入
+//			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//			Connection conn = DriverManager.getConnection(
+//					"jdbc:sqlserver://localhost:1433;",prop);
+//			String sql ="INSERT INTO Agriculturalproducts(GID,Name,Tel,Introduction,TrafficGuidelines,Address,OpenHours,City,Town,Coordinate,Photo)"
+//					+ "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+//			PreparedStatement pstmt = conn.prepareStatement(sql);
+//			
+//			JSONArray root = new JSONArray(json);
+//			for(int i = 0; i < root.length();i++) {
+//				JSONObject row = root.getJSONObject(i);
+//				String gid = row.getString("ID");
+//				String Name = row.getString("Name");
+//				String Tel = row.getString("Tel");
+//				String Introduction = row.getString("Introduction");
+//				String TrafficGuidelines = row.getString("TrafficGuidelines");
+//				String Address = row.getString("Address");
+//				String OpenHours = row.getString("OpenHours");
+//				String City = row.getString("City");
+//				String Town = row.getString("Town");
+//				String Coordinate = row.getString("Coordinate");
+//				String Photo = row.getString("Photo");
+//				//
+//				pstmt.setString(1, gid);
+//				pstmt.setString(2, Name);
+//				pstmt.setString(3, Tel);
+//				pstmt.setString(4, Introduction);
+//				pstmt.setString(5, TrafficGuidelines);
+//				pstmt.setString(6, Address);
+//				pstmt.setString(7, OpenHours);
+//				pstmt.setString(8, City);
+//				pstmt.setString(9, Town);
+//				pstmt.setString(10, Coordinate);
+//				pstmt.setString(11, Photo);
+//				pstmt.execute();
+//				System.out.println("OK");
+//			}
+//			
+//			
+//			
+//		} catch (Exception e) {
+//			System.out.println(e);
+//		}
 		try {
 			//sql驅動程式載入
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			Connection conn = DriverManager.getConnection(
 					"jdbc:sqlserver://localhost:1433;",prop);
-			String sql ="INSERT INTO Agriculturalproducts(GID,Name,Tel,Introduction,TrafficGuidelines,Address,OpenHours,City,Town,Coordinate,Photo)"
-					+ "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+			String sql ="INSERT INTO gift(GID,Name,Feature,SalePlace,ProduceOrg,SpecAndPrice,OrderUrl,ContactTel,Column1)"
+					+ "VALUES(?,?,?,?,?,?,?,?,?)";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			
 			JSONArray root = new JSONArray(json);
@@ -48,27 +93,25 @@ public class Added extends HttpServlet {
 				JSONObject row = root.getJSONObject(i);
 				String gid = row.getString("ID");
 				String Name = row.getString("Name");
-				String Tel = row.getString("Tel");
-				String Introduction = row.getString("Introduction");
-				String TrafficGuidelines = row.getString("TrafficGuidelines");
-				String Address = row.getString("Address");
-				String OpenHours = row.getString("OpenHours");
-				String City = row.getString("City");
-				String Town = row.getString("Town");
-				String Coordinate = row.getString("Coordinate");
-				String Photo = row.getString("Photo");
+				String Feature = row.getString("Feature");
+				String SalePlace = row.getString("SalePlace");
+				String ProduceOrg = row.getString("ProduceOrg");
+				String SpecAndPrice = row.getString("SpecAndPrice");
+				String OrderUrl = row.getString("OrderUrl");
+				String ContactTel = row.getString("ContactTel");
+				String Column1 = row.getString("Column1");
+				
 				//
 				pstmt.setString(1, gid);
 				pstmt.setString(2, Name);
-				pstmt.setString(3, Tel);
-				pstmt.setString(4, Introduction);
-				pstmt.setString(5, TrafficGuidelines);
-				pstmt.setString(6, Address);
-				pstmt.setString(7, OpenHours);
-				pstmt.setString(8, City);
-				pstmt.setString(9, Town);
-				pstmt.setString(10, Coordinate);
-				pstmt.setString(11, Photo);
+				pstmt.setString(3, Feature);
+				pstmt.setString(4, SalePlace);
+				pstmt.setString(5, ProduceOrg);
+				pstmt.setString(6, SpecAndPrice);
+				pstmt.setString(7, OrderUrl);
+				pstmt.setString(8, ContactTel);
+				pstmt.setString(9, Column1);
+				
 				pstmt.execute();
 				System.out.println("OK");
 			}
@@ -78,7 +121,6 @@ public class Added extends HttpServlet {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		
 		
 		
 	}
