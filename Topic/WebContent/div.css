@@ -1,6 +1,24 @@
-#view{
-	height:800px;
-	width:60%;
-	right:50%;
-	margin: 0 auto;
-	}
+#select{
+	height:100px;
+}
+ul li{
+	height:300px;
+	width:280px;
+	border:2px black double;
+	list-style:none;
+	
+}
+#a1{
+	border:2px black double;
+	height:230px;
+	width:270px;
+}
+#a2{
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+#img{
+	height:100%;
+	width:100%;
+}

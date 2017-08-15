@@ -49,13 +49,43 @@ public class Agriculturalarea {
 				data.setPhoto(rs.getString(12));
 				list.add(data);
 			}
-			conn.close();
-			stmt.close();
+			
 		} catch (SQLException e) {
 			System.out.println(e);
 		}
 		return list;
 		
+	}
+	
+	
+	public List<gift> check2(String city){
+		String sql = "select * from gift WHERE SalePlace LIKE '%"+city+"%'";
+		ResultSet rs = null;
+		List<gift> list = new ArrayList<>();
+		
+		try {
+			rs=stmt.executeQuery(sql);
+			while(rs.next()) {
+				gift gift = new gift();
+				gift.setID(rs.getString(1));
+				gift.setGid(rs.getString(2));
+				gift.setName(rs.getString(3));
+				gift.setFeature(rs.getString(4));
+				gift.setSalePlace(rs.getString(5));
+				gift.setProduceOrg(rs.getString(6));
+				gift.setSpecAndPrice(rs.getString(7));
+				gift.setOrderUrl(rs.getString(8));
+				gift.setContactTel(rs.getString(9));
+				gift.setColumn1(rs.getString(10));
+				list.add(gift);
+				
+			}
+			
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+		
+		return list;
 	}
 	
 	

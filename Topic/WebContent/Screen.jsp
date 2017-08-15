@@ -1,6 +1,7 @@
 <%@page import="java.util.List"%>
 <%@page import="tw.iii.topic.Agriculturalarea"%>
 <%@page import="tw.iii.topic.data" %>
+<%@page import="tw.iii.topic.gift" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
@@ -9,18 +10,17 @@
 <html>
 <head>
 <link rel=stylesheet type="text/css" href="div.css">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 <link >
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<form action="check">
-		<div class="ui-grid-a" id="view">
-			<div class="ui-block-a">
-				<select name='op'>
+		<div class="row">
+			<div class=".col-md-offset-3 btn btn-info">
+				<select id="select" name='op'>
 					<option value="臺北">臺北市</option>
 					<option value="新北">新北市</option>
 					<option value="桃園">桃園市</option>
@@ -43,21 +43,29 @@
 			</div>
 			
 			
-			<% List<data> list =(List<data>)request.getAttribute("list");  %>
-			<div class="ui-block-b">
+			<% List<data> list =(List<data>)request.getAttribute("list");  
+			   List<gift> list1 = (List<gift>)request.getAttribute("list1");
+			%>
+			<div class=".col.md-3">
 			
-				<input type="submit" value="查詢">
-				
-			<c:forEach items="${list}" var="list">
-					<c:out value="${list.name}"></c:out>
-					<br>
-			</c:forEach>	
-				
+				<input class="btn-primary" type="submit" value="查詢">	
 			</div>
 			
 			
 		</div>
 		
+		<c:forEach items="${list1}" var="list">
+				<ul>
+					<li>
+						<div id="a1"><img id="img" src="${list.column1}"></div>
+						
+						
+						<div id="a2">
+						<h4>${list.name }</h4>
+						${list.feature}
+						</div>
+				</ul>	
+		</c:forEach>	
 		
 	</form>
 	
