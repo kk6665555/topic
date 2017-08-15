@@ -61,8 +61,8 @@
 						
 						
 						<div id="a2">
-						<h4>${list.name }</h4>
-						${list.feature}
+							<h5>${list.name }</h5>
+							<p>${list.feature}</p>
 						</div>
 				</ul>	
 		</c:forEach>	

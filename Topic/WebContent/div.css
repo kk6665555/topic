@@ -1,11 +1,15 @@
 #select{
 	height:100px;
 }
+ul{
+	float:left;
+}
 ul li{
 	height:300px;
 	width:280px;
 	border:2px black double;
 	list-style:none;
+	
 	
 }
 #a1{
@@ -13,10 +17,11 @@ ul li{
 	height:230px;
 	width:270px;
 }
-#a2{
+#a2 p{
 	overflow:hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+	
 }
 #img{
 	height:100%;
