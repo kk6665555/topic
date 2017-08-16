@@ -1,0 +1,86 @@
+#gift{
+	height:250px;
+}
+#a1{
+	position:relative;
+	text-align:center;
+	width:100%;
+	overflow:hidden;
+	height:75%;
+	cursor:default;
+	
+}
+#a1 .overlay{
+	width:100%;
+	height:100%;
+	position:absolute;
+	overflow:hidden;
+	top:0;
+	left:0;
+	opacity:0;
+	background-color:rgba(0,0,0,0.5);
+	transition:all .4s ease-in-out
+}
+
+#a1 a.info{
+	text-decoration:none;
+	display:inline-block;
+	text-transform:uppercase;
+	color:#fff;
+	border:1px solid #fff;
+	background-color:transparent;
+	opacity:0;
+	filter:alpha(opacity=0);
+	-webkit-transition:all .2s ease-in-out;
+	transition:all .2s ease-in-out;
+	margin:120px 0 0;
+	padding:7px 14px;
+}
+#a1 a.info:hover {
+	box-shadow:0 0 4px #fff;
+}
+
+#a1:hover img {
+	-ms-transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+	transform:scale(1.2);
+}
+
+#a1:hover .overlay {
+	opacity:1;
+	filter:alpha(opacity=100);
+}
+
+#a1:hover a.info {
+	opacity:1;
+	filter:alpha(opacity=100);
+	-ms-transform:translatey(0);
+	-webkit-transform:translatey(0);
+	transform:translatey(0);
+}
+
+#a1:hover a.info {
+	-webkit-transition-delay:.2s;
+	transition-delay:.2s;
+}
+#a1 img{
+	width:100%;
+	height:100%;
+	display:block;
+	position:relative;
+	-webkit-transition:all .4s linear;
+	transition:all .4s linear;
+	
+}
+#a2{
+	height:25%;
+}
+#a2 p{
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;	
+}
+
+
+
+
