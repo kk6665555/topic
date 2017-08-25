@@ -64,11 +64,12 @@
 								  </tbody>
 								  
 								</table>
+								<font size="4"><u>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</u></font><font>:總計</font>
+						  
+								<button id="button">下一頁</button>
 						  </div>
 						  
-						  <font size="4"><u>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</u></font><font>:總計</font>
 						  
-						  <button id="button">下一頁</button>
 						  
 						  
 						  
