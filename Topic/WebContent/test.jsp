@@ -252,8 +252,76 @@
 						  
 						  
 						  <div id="menu2" class="tab-pane fade">
-						      <h3>Menu 2</h3>
-						      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+								<div class="panel panel-danger">
+								    <div class="panel-heading">
+								        <h3 class="panel-title">付款資訊</h3>
+								    </div>
+								    <div class="panel-body">
+								       <form class="form-horizontal">
+								       	  <div class="form-group">
+										    <label class="col-sm-2 control-label">付款狀態</label>
+										    <div class="col-sm-10">
+										      <p class="form-control-static">處理中</p>
+										    </div>
+										  </div>
+										  
+										  <div class="form-group">
+										    <label class="col-sm-2 control-label">付款日期</label>
+										    <div class="col-sm-10">
+										      <p class="form-control-static">XXXX</p>
+										    </div>
+										  </div>
+										  
+										  <div class="form-group">
+										    <label class="col-sm-2 control-label">付款金額</label>
+										    <div class="col-sm-10">
+										      <p class="form-control-static">XXXX</p>
+										    </div>
+										  </div>
+										  
+										  <div class="form-group">
+										    <label class="col-sm-2 control-label">付款方式</label>
+										    <div class="col-sm-10">
+										      <p class="form-control-static">XXXX</p>
+										    </div>
+										  </div>
+										  
+										  <div class="form-group">
+										    <label class="col-sm-2 control-label">運送方式</label>
+										    <div class="col-sm-10">
+										      <p class="form-control-static">XXXX</p>
+										    </div>
+										  </div>
+								       
+								       </form>
+								    </div>
+								</div>	
+								
+								<div class="panel panel-danger">
+								    <div class="panel-heading">
+								        <h3 class="panel-title">感謝購買!  下面為訂單明細</h3>
+								    </div>
+								    <div class="panel-body">
+								       <table class="table table-bordered table-hover">
+								  <thead>
+								    <tr>
+								      <th>商品名稱</th> 
+								      <th>數量</th>
+								      <th>小計</th>
+								    </tr>
+								  </thead>
+								  
+								  <tbody>
+								    <tr>
+								      <th scope="row">1</th>
+								      <td>1</td>
+								      <td>2</td>
+								    </tr> 
+								  </tbody>	  
+								</table>     
+								    </div>
+								</div>		      
+
 						  </div>
 					 </div>
 			</div>

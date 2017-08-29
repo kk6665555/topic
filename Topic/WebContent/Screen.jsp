@@ -85,15 +85,17 @@
 					</select>	
 				</div>	
 			</div>		
-	
+			
+			<%
+			
+			%>
 			<div class="row">
-				<c:forEach items="${list1}" var="list">
+				<c:forEach items="${list1}" var="list" varStatus="val">
 					<div id="gift" class="col-sm-3">	
-						
 						<div id="a1" >
 								<img id="img" src="${list.column1}">
 								<div class="overlay">
-							         <a class="info" href="#">加入購物車</a>
+							         <a class="info" href="#" onclick="shopping()">加入購物車</a>
 							    </div>
 						</div>
 										
@@ -110,12 +112,16 @@
 	
 	
 	
+	
 	<script>
 		function submit(){
 			document.getelementbyid("form").submit();
-			}
-	
-	
+		}
+		function shopping(){
+			alert(${val.current});
+		}
+		
+		
 	</script>
 	
 	
