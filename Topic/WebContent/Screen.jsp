@@ -86,16 +86,14 @@
 				</div>	
 			</div>		
 			
-			<%
 			
-			%>
 			<div class="row">
 				<c:forEach items="${list1}" var="list" varStatus="val">
 					<div id="gift" class="col-sm-3">	
 						<div id="a1" >
 								<img id="img" src="${list.column1}">
 								<div class="overlay">
-							         <a class="info" href="#" onclick="shopping()">加入購物車</a>
+							         <a class="info" href="#" onclick="shopping('${list.ID}','${list.column1}')">加入購物車</a>
 							    </div>
 						</div>
 										
@@ -114,11 +112,17 @@
 	
 	
 	<script>
+		var array = new Array();
 		function submit(){
 			document.getelementbyid("form").submit();
 		}
-		function shopping(){
-			alert(${val.current});
+		function shopping(ID,Column1){
+			var obj={
+			ID:ID,
+			Column1:Column1
+			};
+			array.push(obj);
+			alert(array.toString());
 		}
 		
 		
