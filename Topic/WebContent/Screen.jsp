@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="tw.iii.topic.Agriculturalarea"%>
 <%@page import="tw.iii.topic.data" %>
@@ -13,6 +14,7 @@
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
 <link >
@@ -22,43 +24,24 @@
 <% List<data> list =(List<data>)request.getAttribute("list");  
    List<gift> list1 = (List<gift>)request.getAttribute("list1");
    String op = request.getParameter("op");
+   
+   
+   List<String> id = null;
+   HttpSession sess = request.getSession();
+   if(session.getAttribute("id") == null) {
+       id = new ArrayList<String>();
+       session.setAttribute("id", id);
+   }
+   else {
+       id = (List<String>) session.getAttribute("id");
+   }
 %>
 <body>
-	<nav class="navbar navbar-inverse" role="navigation">
-		<div class="container-fluid">
-		    <div class="navbar-header">
-		        <a class="navbar-brand" href="#">菜鸟教程</a>
-		    </div>
-		    <div>
-		        <ul class="nav navbar-nav navbar-right">
-		            <li class="active"><a href="#">iOS</a></li>
-		            <li><a href="#">SVN</a></li>
-		            <li class="dropdown">
-		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		                    Java <b class="caret"></b>
-		                </a>
-		                <ul class="dropdown-menu">
-		                    <li><a href="#">jmeter</a></li>
-		                    <li><a href="#">EJB</a></li>
-		                    <li><a href="#">Jasper Report</a></li>
-		                    <li class="divider"></li>
-		                    <li><a href="#">分离的链接</a></li>
-		                    <li class="divider"></li>
-		                    <li><a href="#">另一个分离的链接</a></li>
-		                </ul>
-		            </li>
-		        </ul>
-	    </div>
-		</div>
-	</nav>
-
-
-
 	<form id="form" action="check">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-3">
-					<select class="btn btn-danger" name='op' onchange="submit()">
+					<select class="btn btn-danger" id="op" name='op' onchange="submit()">
 						<option SELECTED>縣市</option>
 						<optgroup label="北部:"></optgroup>
 							<option value="台北">臺北市</option>
@@ -93,7 +76,7 @@
 						<div id="a1" >
 								<img id="img" src="${list.column1}">
 								<div class="overlay">
-							         <a class="info" href="#" onclick="shopping('${list.ID}','${list.column1}')">加入購物車</a>
+							         <a class="info" href="session?id=${list.ID}">加入購物車</a>
 							    </div>
 						</div>
 										
@@ -108,23 +91,19 @@
 		</div>
 	</form>
 	
-	
-	
+	<div id="shopping">
+		
+		<a href="shopping"><img alt="購物車" src="images/shopping.png"></a>
+	</div>
+	<div id="number">
+		<a href="shopping">0</a>
+	</div>
 	
 	<script>
-		var array = new Array();
+	
 		function submit(){
 			document.getelementbyid("form").submit();
 		}
-		function shopping(ID,Column1){
-			var obj={
-			ID:ID,
-			Column1:Column1
-			};
-			array.push(obj);
-			alert(array.toString());
-		}
-		
 		
 	</script>
 	
