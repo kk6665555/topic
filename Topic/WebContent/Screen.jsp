@@ -26,17 +26,19 @@
    String op = request.getParameter("op");
    
    
-   List<String> id = null;
+   List<String> idNumber = null;
    HttpSession sess = request.getSession();
-   if(session.getAttribute("id") == null) {
-       id = new ArrayList<String>();
-       session.setAttribute("id", id);
+   if(sess.getAttribute("id") == null) {
+       idNumber = new ArrayList<String>();
+       sess.setAttribute("id", idNumber);
    }
    else {
-       id = (List<String>) session.getAttribute("id");
+	   idNumber = (List<String>) sess.getAttribute("id");
    }
 %>
 <body>
+	<jsp:include page="title.jsp"></jsp:include>
+
 	<form id="form" action="check">
 		<div class="container-fluid">
 			<div class="row">
@@ -71,7 +73,7 @@
 			
 			
 			<div class="row">
-				<c:forEach items="${list1}" var="list" varStatus="val">
+				<c:forEach items="${list1}" var="list">
 					<div id="gift" class="col-sm-3">	
 						<div id="a1" >
 								<img id="img" src="${list.column1}">
@@ -96,7 +98,7 @@
 		<a href="shopping"><img alt="購物車" src="images/shopping.png"></a>
 	</div>
 	<div id="number">
-		<a href="shopping">0</a>
+		<a href="shopping"><%=idNumber.size() %></a>
 	</div>
 	
 	<script>

@@ -87,6 +87,33 @@ public class Agriculturalarea {
 		
 		return list;
 	}
+	public List<gift> check3(String ID) {
+		String sql = "SELECT * FROM GIFT WHERE ID="+ID+"";
+		ResultSet rs = null;
+		List<gift> list = new ArrayList<>();
+		try {
+			rs=stmt.executeQuery(sql);
+			while(rs.next()) {
+				gift gift = new gift();
+				gift.setID(rs.getString(1));
+				gift.setGid(rs.getString(2));
+				gift.setName(rs.getString(3));
+				gift.setFeature(rs.getString(4));
+				gift.setSalePlace(rs.getString(5));
+				gift.setProduceOrg(rs.getString(6));
+				gift.setSpecAndPrice(rs.getString(7));
+				gift.setOrderUrl(rs.getString(8));
+				gift.setContactTel(rs.getString(9));
+				gift.setColumn1(rs.getString(10));
+				list.add(gift);		
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		return list;
+		
+	}
 	
 	
 }

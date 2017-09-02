@@ -84,7 +84,7 @@ public class Added extends HttpServlet {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			Connection conn = DriverManager.getConnection(
 					"jdbc:sqlserver://localhost:1433;",prop);
-			String sql ="INSERT INTO gift(GID,Name,Feature,SalePlace,ProduceOrg,SpecAndPrice,OrderUrl,ContactTel,Column1)"
+			String sql ="INSERT INTO gift(GID,Name,Feature,SalePlace,ProduceOrg,SpecAndPrice,Price,ContactTel,Column1)"
 					+ "VALUES(?,?,?,?,?,?,?,?,?)";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			
@@ -97,7 +97,7 @@ public class Added extends HttpServlet {
 				String SalePlace = row.getString("SalePlace");
 				String ProduceOrg = row.getString("ProduceOrg");
 				String SpecAndPrice = row.getString("SpecAndPrice");
-				String OrderUrl = row.getString("OrderUrl");
+				String Price = row.getString("OrderUrl");
 				String ContactTel = row.getString("ContactTel");
 				String Column1 = row.getString("Column1");
 				
@@ -108,7 +108,7 @@ public class Added extends HttpServlet {
 				pstmt.setString(4, SalePlace);
 				pstmt.setString(5, ProduceOrg);
 				pstmt.setString(6, SpecAndPrice);
-				pstmt.setString(7, OrderUrl);
+				pstmt.setString(7, Price);
 				pstmt.setString(8, ContactTel);
 				pstmt.setString(9, Column1);
 				

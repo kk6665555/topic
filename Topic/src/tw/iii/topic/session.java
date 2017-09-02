@@ -21,11 +21,9 @@ public class session extends HttpServlet {
 		String op = request.getParameter("op");
 		if(id!=null) {
 			HttpSession session = request.getSession();
-			List<String> idnumber = (List<String>) session.getAttribute("id");
-			idnumber.add(id);
+			List<String> idNumber = (List<String>) session.getAttribute("id");
+			idNumber.add(id);
 		}
-		System.out.println(id);
-		
-		response.sendRedirect("Screen.jsp");
+		response.sendRedirect("check");
 	}
 }

@@ -10,5 +10,16 @@ ul,li{list-style:none;}
     #product ul li.last { border-radius:0 10px 10px 0; }
 #button{
 	float:right;
-}    
+}  
+#dropdown-menu{
+	width:100%;
+}
+#img{
+	width:80px;
+	height:100px;
+}  
+#img1{
+	width:100%;
+	height:100%;
+}
 
