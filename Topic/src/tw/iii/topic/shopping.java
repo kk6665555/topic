@@ -17,6 +17,12 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/shopping")
 public class shopping extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			String delete = request.getParameter("delete");
+			if(delete!=null) {
+			System.out.println(delete);
+			}else {
+				
+			}
 			List<String> id = (List<String>) request.getSession().getAttribute("id");
 			List<gift> list = null;			
 			Map<String, Integer> idNumbers = new HashMap<String, Integer>();
@@ -38,16 +44,15 @@ public class shopping extends HttpServlet {
 		        		membershopping.put(list, idNumbers.get(idNumber));
 		        	}catch (Exception e) {
 					}
-		        	System.out.println(idNumber);
-		        	System.out.println(idNumbers.get(idNumber));
+//		        	System.out.println(idNumber);
+//		        	System.out.println(idNumbers.keySet());
+//		        	System.out.println(idNumbers.get(idNumber));
 		        }
 		        
 		        request.setAttribute("membershopping", membershopping);
 		        request.getRequestDispatcher("test.jsp").forward(request, response);
 			}else{
 				response.sendRedirect("test.jsp");
-			}
-	        
-	    
+			}    
 	}
 }

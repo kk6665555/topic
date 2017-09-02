@@ -43,7 +43,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-3">
-					<select class="btn btn-danger" id="op" name='op' onchange="submit()">
+					<select class="btn btn-danger" id="op" name='op' onchange="sub()">
 						<option SELECTED>縣市</option>
 						<optgroup label="北部:"></optgroup>
 							<option value="台北">臺北市</option>
@@ -78,7 +78,7 @@
 						<div id="a1" >
 								<img id="img" src="${list.column1}">
 								<div class="overlay">
-							         <a class="info" href="session?id=${list.ID}">加入購物車</a>
+							         <a class="info" href="session?id=${list.ID}&op=<%=op %>">加入購物車</a>
 							    </div>
 						</div>
 										
@@ -102,9 +102,10 @@
 	</div>
 	
 	<script>
-	
-		function submit(){
-			document.getelementbyid("form").submit();
+		
+		function sub(){
+			
+			document.getElementById("form").submit();
 		}
 		
 	</script>

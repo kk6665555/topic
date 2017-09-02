@@ -64,7 +64,7 @@
 								      <td>${idNumber.value}</td>
 								      <td></td>
 								      <td></td>
-								      <td>刪除</td>
+								      <td><a href="shopping?delete="></a>刪除</td>
 								    </tr> 
 								  </tbody>
 								  </c:forEach>

@@ -171,7 +171,7 @@ body.custom-background {  background-size: 100% 100%; background-repeat: no-repe
 		    <div>
 		        <ul class="nav navbar-nav navbar-right">
 		            <li class="active"><a href="#" id="aclor" >首頁</a></li>
-		            <li><a href="#">伴手禮專區</a></li>
+		            <li><a href="Screen.jsp">伴手禮專區</a></li>
 		            <li class="dropdown">
 		                
 		             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
