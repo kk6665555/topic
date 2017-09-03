@@ -74,9 +74,10 @@ public class Agriculturalarea {
 				gift.setSalePlace(rs.getString(5));
 				gift.setProduceOrg(rs.getString(6));
 				gift.setSpecAndPrice(rs.getString(7));
-				gift.setOrderUrl(rs.getString(8));
-				gift.setContactTel(rs.getString(9));
-				gift.setColumn1(rs.getString(10));
+				gift.setUnit(rs.getString(8));
+				gift.setPrice(rs.getString(9));
+				gift.setContactTel(rs.getString(10));
+				gift.setColumn1(rs.getString(11));
 				list.add(gift);
 				
 			}
@@ -102,9 +103,10 @@ public class Agriculturalarea {
 				gift.setSalePlace(rs.getString(5));
 				gift.setProduceOrg(rs.getString(6));
 				gift.setSpecAndPrice(rs.getString(7));
-				gift.setOrderUrl(rs.getString(8));
-				gift.setContactTel(rs.getString(9));
-				gift.setColumn1(rs.getString(10));
+				gift.setUnit(rs.getString(8));
+				gift.setPrice(rs.getString(9));
+				gift.setContactTel(rs.getString(10));
+				gift.setColumn1(rs.getString(11));
 				list.add(gift);		
 			}
 		} catch (Exception e) {

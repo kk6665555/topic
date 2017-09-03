@@ -13,12 +13,16 @@
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js
+"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+
+
 <body>
 	<jsp:include page="title.jsp"></jsp:include>
 
@@ -50,25 +54,26 @@
 								      <th></th>
 								    </tr>
 								  </thead>
-							<c:forEach items="${membershopping}" var="idNumber">
-								<c:forEach items="${idNumber.key}" var="list">
+							
 								  <tbody>
+								   <c:forEach items="${membershopping}" var="idNumber">
+										<c:forEach items="${idNumber.key}" var="list">
 								    <tr>
 								      <th scope="row"><div class="checkbox">
-														  <label><input type="checkbox" value="" name="checkbox"></label>
-													  </div>
+														  <label><input type="checkbox" value="" name="checkbox"></label>			  </div>
 									  </th>
 								      <td id="img"><img id="img1" src="${list.column1}"></img></td>
 								      <td>${list.name}</td>
-								      <td>${list.specAndPrice}</td>
+								      <td>${list.price}</td>
 								      <td>${idNumber.value}</td>
+								      <td>${list.price * idNumber.value}</td>
 								      <td></td>
-								      <td></td>
-								      <td><a href="shopping?delete="></a>刪除</td>
+								      <td><a href="shopping?id2=${list.ID}">刪除</a></td>																	
 								    </tr> 
+								    	</c:forEach>
+									</c:forEach>
 								  </tbody>
-								  </c:forEach>
-							</c:forEach>
+								  
 								</table>
 								<font size="4"><u>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</u></font><font>:總計</font>
 						  

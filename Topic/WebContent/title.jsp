@@ -32,7 +32,7 @@
 <style type="text/css">
 body.custom-background {  background-size: 100% 100%; background-repeat: no-repeat; background-position: top left; background-attachment: fixed; }
 </style>
-<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+
 <!--=== 蒲公英特校 ===-->
 
 

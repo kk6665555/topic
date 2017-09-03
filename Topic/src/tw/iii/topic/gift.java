@@ -1,7 +1,7 @@
 package tw.iii.topic;
 
 public class gift {
-	private String ID,Gid,Name,Feature,SalePlace,ProduceOrg,SpecAndPrice,OrderUrl,ContactTel,Column1;
+	private String ID,Gid,Name,Feature,SalePlace,ProduceOrg,SpecAndPrice,Unit,Price,ContactTel,Column1;
 
 	public String getID() {
 		return ID;
@@ -59,13 +59,7 @@ public class gift {
 		SpecAndPrice = specAndPrice;
 	}
 
-	public String getOrderUrl() {
-		return OrderUrl;
-	}
-
-	public void setOrderUrl(String orderUrl) {
-		OrderUrl = orderUrl;
-	}
+	
 
 	public String getContactTel() {
 		return ContactTel;
@@ -81,5 +75,21 @@ public class gift {
 
 	public void setColumn1(String column1) {
 		Column1 = column1;
+	}
+
+	public String getUnit() {
+		return Unit;
+	}
+
+	public void setUnit(String unit) {
+		Unit = unit;
+	}
+
+	public String getPrice() {
+		return Price;
+	}
+
+	public void setPrice(String price) {
+		Price = price;
 	}
 }
