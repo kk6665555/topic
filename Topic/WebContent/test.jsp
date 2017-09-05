@@ -22,7 +22,7 @@
 <title>Insert title here</title>
 </head>
 
-<body>
+<body  onload="ons()">
 	<jsp:include page="title.jsp"></jsp:include>
 
 	<div class ="container">
@@ -83,34 +83,34 @@
 						  
 						  
 						  
-						  
+					
 						  <div id="menu1" class="tab-pane fade">
-						      <form action="" class="form-horizontal">
+						      <form id ="form" action="Memberorder" class="form-horizontal">
 						      	<div class="form-group">						      		
 								      <label class="control-label" for="name">:姓名</label>
 								      <div class="col-xs-3">
-									      <input type="text" class="form-control" id="name">
+									      <input type="text" class="form-control" id="name" placeholder="姓名"  required="required">
 									  </div> 
 							    </div>
 							    
 							    <div class="form-group">					      		
 								      <label class="control-label" for="phone">:電話</label>
 								      <div class="col-xs-3">
-									      <input type="text" class="form-control" id="phone">
+									      <input type="text" class="form-control" id="phone" placeholder="電話" required="required">
 									  </div> 
 							    </div>
 							    
 							    <div class="form-group">					      		
 								      <label class="control-label" for="homephone">:市話</label>
 								      <div class="col-xs-3">
-									      <input type="text" class="form-control" id="homephone">
+									      <input type="text" class="form-control" id="homephone" placeholder="市話"  required="required">
 									  </div>
 						     	</div>
 						     	
 						     	<div class="form-group">					      		
-								      <label class="control-label" for="mail">:郵件</label>
+								      <label class="control-label" for="email">:郵件</label>
 								      <div class="col-xs-5">
-									      <input type="email" class="form-control" id="mail">
+									      <input type="email" class="form-control" id="mail" placeholder="郵件"  required="required">
 									  </div>
 						     	</div>
 						     	
@@ -126,7 +126,7 @@
 												<div class="form-group">	
 												    <div class="radio">
 													    <label>
-													      <input type="radio" name="optradio" >郵局
+													      <input type="radio" name="optradio" checked>郵局
 													    </label>
 													 </div>
 												</div>
@@ -153,7 +153,7 @@
 										 <div class="form-group">
 										 	
 									     	     取貨方式:
-									          <label><input type="radio" name="a">郵局</label>
+									          <label><input type="radio" name="a" checked>郵局</label>
 									          <label><input type="radio" name="a">7-11</label>
 									         
 									        <!-- Single button -->
@@ -179,20 +179,18 @@
 												   選擇 <span class="caret"></span>
 												  </button>
 												  
-												  <ul id="dropdown-menu" class="dropdown-menu">
+												  <ul id="dropdownmenu" class="dropdown-menu">
 												    <li><a>郵局</a></li>
 												    <li><a>ATM</a></li>
 												    <li><a>信用卡</a></li>
 												  </ul>
 											 
-										</div>
+										</div>	
 								  </div>
 								</div>
-						     	
-						     	<div></div>
-						     	
+						  	
 						      </form>
-						      
+						      <button id="button" type="submit" form="form" class="btn btn-primary" onclick="nextpage2()">完成</button>
 						      
 						  </div>
 						  
