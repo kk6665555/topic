@@ -22,7 +22,6 @@
 <title>Insert title here</title>
 </head>
 
-
 <body>
 	<jsp:include page="title.jsp"></jsp:include>
 
@@ -54,28 +53,28 @@
 								      <th></th>
 								    </tr>
 								  </thead>
-							
 								  <tbody>
 								   <c:forEach items="${membershopping}" var="idNumber">
 										<c:forEach items="${idNumber.key}" var="list">
-								    <tr>
-								      <th scope="row"><div class="checkbox">
-														  <label><input type="checkbox" value="" name="checkbox"></label>			  </div>
-									  </th>
-								      <td id="img"><img id="img1" src="${list.column1}"></img></td>
-								      <td>${list.name}</td>
-								      <td>${list.price}</td>
-								      <td>${idNumber.value}</td>
-								      <td>${list.price * idNumber.value}</td>
-								      <td></td>
-								      <td><a href="shopping?id2=${list.ID}">刪除</a></td>																	
-								    </tr> 
+									    <tr>
+									      <th scope="row"><div class="checkbox">
+															  <label><input type="checkbox" value="" name="checkbox"></label>			  </div>
+										  </th>
+									      <td id="img"><img id="img1" src="${list.column1}"></img></td>
+									      <td>${list.name}</td>
+									      <td>${list.price}</td>
+									      <td>${idNumber.value}</td>
+									      <td>${list.price * idNumber.value}</td>
+									      <td>${list.unit}</td>		      
+									      <td><a href="shopping?id2=${list.ID}">刪除</a></td>     														
+									    </tr>  
+									    	<c:set var="sum" value="${sum+list.price * idNumber.value}"></c:set>
 								    	</c:forEach>
 									</c:forEach>
 								  </tbody>
 								  
 								</table>
-								<font size="4"><u>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</u></font><font>:總計</font>
+								<font size="4"><u><c:out value="${sum}"></c:out></u></font><font>:總計</font>
 						  
 								<button id="button" class="btn btn-primary" onclick="nextpage()">下一頁</button>
 						  </div>
@@ -120,31 +119,35 @@
 									    <h3 class="panel-title">配送方式</h3>
 									</div>
 									<div id="panel-body" class="panel-body">
-										<h3>服務</h3>
-										<div class="form-group">	
-										    <div class="radio">
-											    <label>
-											      <input type="radio" name="optradio" >郵局
-											    </label>
-											 </div>
+										<div class="row">
+											<h3 id = "h3" class="col-xs-3">服務</h3>
+											
+											<div class="col-xs-9">
+												<div class="form-group">	
+												    <div class="radio">
+													    <label>
+													      <input type="radio" name="optradio" >郵局
+													    </label>
+													 </div>
+												</div>
+											
+												<div class="form-group">
+												 <div class="radio">
+												    <label>
+												      <input type="radio" name="optradio" >黑貓(自宅)
+												    </label>
+												 </div>
+												 </div>
+												 
+												 <div class="form-group">
+												 <div class="radio">
+												    <label>
+												      <input type="radio" name="optradio" >新竹貨運
+												    </label>
+												 </div>
+											 	 </div>
+											 </div> 
 										</div>
-										
-										<div class="form-group">
-										 <div class="radio">
-										    <label>
-										      <input type="radio" name="optradio" >黑貓(自宅)
-										    </label>
-										 </div>
-										 </div>
-										 
-										 <div class="form-group">
-										 <div class="radio">
-										    <label>
-										      <input type="radio" name="optradio" >新竹貨運
-										    </label>
-										 </div>
-										 </div>
-										
 										
 										 
 										 <div class="form-group">
@@ -172,8 +175,8 @@
 								  <div class="panel-body row">
 								    	<div class="btn-group col-sm-12">
 								    		
-												  <button id="btn" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												    選擇 <span class="caret"></span>
+												  <button id="btn" type="button" class="btn btn-info dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												   選擇 <span class="caret"></span>
 												  </button>
 												  
 												  <ul id="dropdown-menu" class="dropdown-menu">

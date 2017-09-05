@@ -11,41 +11,13 @@
     
      <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    
-    <link rel=stylesheet type="text/css" href="css/div.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<link rel="stylesheet" href="NewCss/css/thumbnail-gallery.css">
-<link rel="stylesheet" href="NewCss/css/001.css"/>  
-
-
-
 
 <!--=== 以下蒲公英特校 ===-->
-<script type="text/javascript" src="NewCss/js/all.js"></script> 
-<script type="text/javascript" src="NewCss/js/jquery.min.js"></script>
 <style type="text/css">
 body.custom-background {  background-size: 100% 100%; background-repeat: no-repeat; background-position: top left; background-attachment: fixed; }
 </style>
 
 <!--=== 蒲公英特校 ===-->
-
-
-<link rel="stylesheet" type="text/css" href="NewCss/css/style.css" media="screen">
-<link rel="stylesheet" type="text/css" href="NewCss/css/nivo-slider.css" media="screen">
-<script type="text/javascript" src="NewCss/js/jquery-1.6.4.min.js"></script>
-<script type="text/javascript" src="NewCss/js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="NewCss/js/jquery.nivo.slider.pack.js"></script>
-<script type="text/javascript">
-//Slider
-
-
-</script>
 
  <style>
       #map {
@@ -58,17 +30,6 @@ body.custom-background {  background-size: 100% 100%; background-repeat: no-repe
     </head>
         
 <style type="text/css">
-    
- 
-    
-   
-    
-  
-   
-    
-
-    
-  
 #dropdownmenu{
       
     border-top: solid 2px #72c02c;

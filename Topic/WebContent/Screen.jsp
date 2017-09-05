@@ -16,7 +16,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script src="bootstrap/js/bootstrap.min.js"></script>
-
+<script src="js/Screen.js"></script>
 <link >
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
@@ -44,7 +44,7 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<select class="btn btn-danger" id="op" name='op' onchange="sub()">
-						<option SELECTED>縣市</option>
+						<option SELECTED ><%=op==null?"選擇":op%></option>
 						<optgroup label="北部:"></optgroup>
 							<option value="台北">臺北市</option>
 							<option value="宜蘭">宜蘭縣</option>
@@ -99,17 +99,6 @@
 	</div>
 	<div id="number">
 		<a href="shopping"><%=idNumber.size() %></a>
-	</div>
-	
-	<script>
-		
-		function sub(){
-			
-			document.getElementById("form").submit();
-		}
-		
-	</script>
-	
-	
+	</div>	
 </body>
 </html>
