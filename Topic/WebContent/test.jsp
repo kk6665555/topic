@@ -27,7 +27,7 @@
 
 	<div class ="container">
 		<div class="row">
-		
+		 <form id ="form" action="Memberorder" class="form-horizontal">
 			<div class="col-sm-12 steps">
 			
 					<div id="product"  class="flow_steps clearfix">
@@ -57,8 +57,10 @@
 								   <c:forEach items="${membershopping}" var="idNumber">
 										<c:forEach items="${idNumber.key}" var="list">
 									    <tr>
-									      <th scope="row"><div class="checkbox">
-															  <label><input type="checkbox" value="" name="checkbox"></label>			  </div>
+									      <th scope="row">
+									      		<div class="checkbox">
+															  <label><input type="checkbox" value="${list.ID}" name="checkbox"></label>			  
+												</div>
 										  </th>
 									      <td id="img"><img id="img1" src="${list.column1}"></img></td>
 									      <td>${list.name}</td>
@@ -85,32 +87,32 @@
 						  
 					
 						  <div id="menu1" class="tab-pane fade">
-						      <form id ="form" action="Memberorder" class="form-horizontal">
+						     
 						      	<div class="form-group">						      		
 								      <label class="control-label" for="name">:姓名</label>
 								      <div class="col-xs-3">
-									      <input type="text" class="form-control" id="name" placeholder="姓名"  required="required">
+									      <input type="text" class="form-control" id="name" name="name" placeholder="姓名"  required="required">
 									  </div> 
 							    </div>
 							    
 							    <div class="form-group">					      		
 								      <label class="control-label" for="phone">:電話</label>
 								      <div class="col-xs-3">
-									      <input type="text" class="form-control" id="phone" placeholder="電話" required="required">
+									      <input type="text" class="form-control" id="phone" name="phone" placeholder="電話" required="required">
 									  </div> 
 							    </div>
 							    
 							    <div class="form-group">					      		
 								      <label class="control-label" for="homephone">:市話</label>
 								      <div class="col-xs-3">
-									      <input type="text" class="form-control" id="homephone" placeholder="市話"  required="required">
+									      <input type="text" class="form-control" id="homephone" name="homephone" placeholder="市話"  required="required">
 									  </div>
 						     	</div>
 						     	
 						     	<div class="form-group">					      		
 								      <label class="control-label" for="email">:郵件</label>
 								      <div class="col-xs-5">
-									      <input type="email" class="form-control" id="mail" placeholder="郵件"  required="required">
+									      <input type="email" class="form-control" id="email" name="email" placeholder="郵件"  required="required">
 									  </div>
 						     	</div>
 						     	
@@ -126,7 +128,7 @@
 												<div class="form-group">	
 												    <div class="radio">
 													    <label>
-													      <input type="radio" name="optradio" checked>郵局
+													      <input type="radio" name="optradio" value="郵局" checked>郵局
 													    </label>
 													 </div>
 												</div>
@@ -134,7 +136,7 @@
 												<div class="form-group">
 												 <div class="radio">
 												    <label>
-												      <input type="radio" name="optradio" >黑貓(自宅)
+												      <input type="radio" name="optradio" value="黑貓(自宅)">黑貓(自宅)
 												    </label>
 												 </div>
 												 </div>
@@ -142,7 +144,7 @@
 												 <div class="form-group">
 												 <div class="radio">
 												    <label>
-												      <input type="radio" name="optradio" >新竹貨運
+												      <input type="radio" name="optradio" value="新竹貨運">新竹貨運
 												    </label>
 												 </div>
 											 	 </div>
@@ -153,8 +155,8 @@
 										 <div class="form-group">
 										 	
 									     	     取貨方式:
-									          <label><input type="radio" name="a" checked>郵局</label>
-									          <label><input type="radio" name="a">7-11</label>
+									          <label><input type="radio" name="a" value="郵局" checked >郵局</label>
+									          <label><input type="radio" name="a" value="7-11">7-11</label>
 									         
 									        <!-- Single button -->
 											<div class="btn-group">
@@ -174,9 +176,9 @@
 						     	  <div class="panel-heading">付款方式</div>
 								  <div class="panel-body row">
 								    	<div class="btn-group col-sm-12">
-								    		
+								    		<div class="form-group">
 												  <button id="btn" type="button" class="btn btn-info dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												   選擇 <span class="caret"></span>
+												   郵局 <span class="caret"></span>
 												  </button>
 												  
 												  <ul id="dropdownmenu" class="dropdown-menu">
@@ -184,12 +186,11 @@
 												    <li><a>ATM</a></li>
 												    <li><a>信用卡</a></li>
 												  </ul>
-											 
+											 </div>
 										</div>	
 								  </div>
 								</div>
-						  	
-						      </form>
+	
 						      <button id="button" type="submit" form="form" class="btn btn-primary" onclick="nextpage2()">完成</button>
 						      
 						  </div>
@@ -201,7 +202,6 @@
 								        <h3 class="panel-title">付款資訊</h3>
 								    </div>
 								    <div class="panel-body">
-								       <form class="form-horizontal">
 								       	  <div class="form-group">
 										    <label class="col-sm-2 control-label">付款狀態</label>
 										    <div class="col-sm-10">
@@ -236,8 +236,6 @@
 										      <p class="form-control-static">XXXX</p>
 										    </div>
 										  </div>
-								       
-								       </form>
 								    </div>
 								</div>	
 								
@@ -269,7 +267,7 @@
 						  </div>
 					 </div>
 			</div>
-			
+		</form>
 		</div>
 	</div>
 			 

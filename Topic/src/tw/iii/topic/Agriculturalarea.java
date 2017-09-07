@@ -2,6 +2,7 @@ package tw.iii.topic;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -9,10 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+
+
 public class Agriculturalarea {
 	private Connection conn;
 	private Statement stmt;
-	
+	private PreparedStatement pstmt;
 	public Agriculturalarea() throws Exception{
 		Properties prop = new Properties();
 		prop.setProperty("user", "sa1");
@@ -114,6 +117,55 @@ public class Agriculturalarea {
 		}
 		
 		return list;
+		
+	}
+	public List<data1> check4(String memberID,String productID,String name,String phone,String homephone,String email,String transport,String Pick,
+			String location,String payment,String status,String date){
+		String sql = "insert into Memberorder(memberID,productID,name,phone,homephone,email,transport,Pick,location,payment,status,date)"
+				+ " values(?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql1 = "select * from Memberorder WHERE ID="+memberID+"";
+		ResultSet rs = null;
+		List<data1> list = new ArrayList<>();
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, memberID);
+			pstmt.setString(2, productID);
+			pstmt.setString(3, name);
+			pstmt.setString(4, phone);
+			pstmt.setString(5, homephone);
+			pstmt.setString(6, email);
+			pstmt.setString(7, transport);
+			pstmt.setString(8, Pick);
+			pstmt.setString(9, location);
+			pstmt.setString(10, payment);
+			pstmt.setString(11, status);
+			pstmt.setString(12, date);
+			pstmt.executeUpdate();
+			
+			
+			rs=stmt.executeQuery(sql1);
+			if(rs.next()) {
+				data1 date1 = new data1();
+				date1.setMemberID(rs.getString(1));
+				date1.setProductID(rs.getString(2));
+				date1.setName(rs.getString(3));
+				date1.setPhone(rs.getString(4));
+				date1.setHomephone(rs.getString(5));
+				date1.setEmail(rs.getString(6));
+				date1.setTransport(rs.getString(7));
+				date1.setPick(rs.getString(8));
+				date1.setLocation(rs.getString(9));
+				date1.setPayment(rs.getString(10));
+				date1.setStatus(rs.getString(11));
+				date1.setDate(rs.getString(12));
+				list.add(date1);
+			}
+			System.out.println("ok");
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+		
+		return null;
 		
 	}
 	
