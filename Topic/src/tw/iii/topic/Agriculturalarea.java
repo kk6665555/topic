@@ -18,13 +18,13 @@ public class Agriculturalarea {
 	private PreparedStatement pstmt;
 	public Agriculturalarea() throws Exception{
 		Properties prop = new Properties();
-		prop.setProperty("user", "sa1");
-		prop.setProperty("password","8877560");
-		prop.setProperty("databaseName", "topic");
+		prop.setProperty("user", "root");
+		prop.setProperty("password","root");
 		
-		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		
+		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(
-				"jdbc:sqlserver://localhost:1433;",prop);
+				"jdbc:mysql://localhost/attractions?",prop);
 		stmt=conn.createStatement();
 		
 	}
@@ -146,18 +146,19 @@ public class Agriculturalarea {
 			rs=stmt.executeQuery(sql1);
 			if(rs.next()) {
 				data1 date1 = new data1();
-				date1.setMemberID(rs.getString(1));
-				date1.setProductID(rs.getString(2));
-				date1.setName(rs.getString(3));
-				date1.setPhone(rs.getString(4));
-				date1.setHomephone(rs.getString(5));
-				date1.setEmail(rs.getString(6));
-				date1.setTransport(rs.getString(7));
-				date1.setPick(rs.getString(8));
-				date1.setLocation(rs.getString(9));
-				date1.setPayment(rs.getString(10));
-				date1.setStatus(rs.getString(11));
-				date1.setDate(rs.getString(12));
+				date1.setID(rs.getString(1));
+				date1.setMemberID(rs.getString(2));
+				date1.setProductID(rs.getString(3));
+				date1.setName(rs.getString(4));
+				date1.setPhone(rs.getString(5));
+				date1.setHomephone(rs.getString(6));
+				date1.setEmail(rs.getString(7));
+				date1.setTransport(rs.getString(8));
+				date1.setPick(rs.getString(9));
+				date1.setLocation(rs.getString(10));
+				date1.setPayment(rs.getString(11));
+				date1.setStatus(rs.getString(12));
+				date1.setDate(rs.getString(13));
 				list.add(date1);
 			}
 			System.out.println("ok");

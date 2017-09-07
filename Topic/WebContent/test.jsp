@@ -59,7 +59,7 @@
 									    <tr>
 									      <th scope="row">
 									      		<div class="checkbox">
-															  <label><input type="checkbox" value="${list.ID}" name="checkbox"></label>			  
+															  <label><input type="checkbox" value="${list.ID}:${idNumber.value}" name="checkbox"></label>			  
 												</div>
 										  </th>
 									      <td id="img"><img id="img1" src="${list.column1}"></img></td>

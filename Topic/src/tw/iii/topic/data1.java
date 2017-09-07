@@ -1,7 +1,7 @@
 package tw.iii.topic;
 
 public class data1 {
-	private String memberID,productID,name,phone,homephone,email,transport,Pick,location,payment,status,date;
+	private String ID,memberID,productID,name,phone,homephone,email,transport,Pick,location,payment,status,date;
 
 	public String getMemberID() {
 		return memberID;
@@ -97,5 +97,13 @@ public class data1 {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public String getID() {
+		return ID;
+	}
+
+	public void setID(String iD) {
+		ID = iD;
 	}
 }

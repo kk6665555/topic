@@ -31,9 +31,9 @@ public class Added extends HttpServlet {
 		String json = getJSONString(strURL);
 		//帳號密碼資料庫位置設定
 		Properties prop = new Properties();
-		prop.setProperty("user", "sa1");
-		prop.setProperty("password","8877560");
-		prop.setProperty("databaseName", "topic");
+		prop.setProperty("user", "root");
+		prop.setProperty("password","root");
+		
 		//資料庫連線
 //		try {
 //			//sql驅動程式載入
@@ -81,9 +81,9 @@ public class Added extends HttpServlet {
 //		}
 		try {
 			//sql驅動程式載入
-			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(
-					"jdbc:sqlserver://localhost:1433;",prop);
+					"jdbc:mysql://localhost/attractions?",prop);
 			String sql ="INSERT INTO gift(GID,Name,Feature,SalePlace,ProduceOrg,SpecAndPrice,Price,ContactTel,Column1)"
 					+ "VALUES(?,?,?,?,?,?,?,?,?)";
 			PreparedStatement pstmt = conn.prepareStatement(sql);

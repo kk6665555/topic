@@ -32,12 +32,12 @@ public class Memberorder extends HttpServlet {
 		List<data1> list = null;
 		try {
 			ag= new Agriculturalarea();
-			list=ag.check4("1", str, name, phone, homephone, email, optradio, "7-11","試試看", a, "1", "1992");
+			list=ag.check4("1", str, name, phone, homephone, email, optradio, "7-11","試試看", a, "1", "2008-7-04");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		request.setAttribute("list", list);
-		request.getRequestDispatcher("test.jsp").forward(request, response);
+//		request.setAttribute("list", list);
+//		request.getRequestDispatcher("test.jsp").forward(request, response);
 		
 		
 	}
