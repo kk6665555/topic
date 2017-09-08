@@ -2,6 +2,7 @@ package tw.iii.topic;
 
 public class data1 {
 	private String ID,memberID,productID,name,phone,homephone,email,transport,Pick,location,payment,status,date;
+	private int sum;
 
 	public String getMemberID() {
 		return memberID;
@@ -105,5 +106,13 @@ public class data1 {
 
 	public void setID(String iD) {
 		ID = iD;
+	}
+
+	public int getSum() {
+		return sum;
+	}
+
+	public void setSum(int sum) {
+		this.sum = sum;
 	}
 }

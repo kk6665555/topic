@@ -20,12 +20,8 @@
 		$("#two").addClass("current");
 		$("#test a[href='#menu1']").tab('show');
 	}
-	function nextpage2(){
-		$("li[class*='current']").removeClass("current_prev current");
-		$("#two").addClass("current_prev");
-		$("#three").addClass("current");
-		$("#test a[href='#menu2']").tab('show');
-	}
+	
+
 	
 	
 	function ons(){

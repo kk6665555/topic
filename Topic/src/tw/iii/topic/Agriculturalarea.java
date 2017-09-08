@@ -120,10 +120,10 @@ public class Agriculturalarea {
 		
 	}
 	public List<data1> check4(String memberID,String productID,String name,String phone,String homephone,String email,String transport,String Pick,
-			String location,String payment,String status,String date){
-		String sql = "insert into Memberorder(memberID,productID,name,phone,homephone,email,transport,Pick,location,payment,status,date)"
-				+ " values(?,?,?,?,?,?,?,?,?,?,?,?)";
-		String sql1 = "select * from Memberorder WHERE ID="+memberID+"";
+			String location,String payment,String status,int sum,String date){
+		String sql = "insert into Memberorder(memberID,productID,name,phone,homephone,email,transport,Pick,location,payment,status,sum,date)"
+				+ " values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql1 = "select * from Memberorder WHERE memberID="+memberID+"";
 		ResultSet rs = null;
 		List<data1> list = new ArrayList<>();
 		try {
@@ -139,12 +139,13 @@ public class Agriculturalarea {
 			pstmt.setString(9, location);
 			pstmt.setString(10, payment);
 			pstmt.setString(11, status);
-			pstmt.setString(12, date);
+			pstmt.setInt(12, sum);
+			pstmt.setString(13, date);
 			pstmt.executeUpdate();
 			
 			
 			rs=stmt.executeQuery(sql1);
-			if(rs.next()) {
+			while(rs.next()) {
 				data1 date1 = new data1();
 				date1.setID(rs.getString(1));
 				date1.setMemberID(rs.getString(2));
@@ -158,7 +159,8 @@ public class Agriculturalarea {
 				date1.setLocation(rs.getString(10));
 				date1.setPayment(rs.getString(11));
 				date1.setStatus(rs.getString(12));
-				date1.setDate(rs.getString(13));
+				date1.setSum(rs.getInt(13));
+				date1.setDate(rs.getString(14));
 				list.add(date1);
 			}
 			System.out.println("ok");
@@ -166,7 +168,7 @@ public class Agriculturalarea {
 			System.out.println(e);
 		}
 		
-		return null;
+		return list;
 		
 	}
 	

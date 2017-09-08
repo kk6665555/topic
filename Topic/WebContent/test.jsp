@@ -1,6 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@page import="java.util.List"%>
+<%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="tw.iii.topic.data1" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,8 +16,7 @@
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js
-"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -59,7 +61,7 @@
 									    <tr>
 									      <th scope="row">
 									      		<div class="checkbox">
-															  <label><input type="checkbox" value="${list.ID}:${idNumber.value}" name="checkbox"></label>			  
+															  <label><input type="checkbox" value="${list.ID},${idNumber.value}" name="checkbox"></label>			  
 												</div>
 										  </th>
 									      <td id="img"><img id="img1" src="${list.column1}"></img></td>
@@ -177,15 +179,11 @@
 								  <div class="panel-body row">
 								    	<div class="btn-group col-sm-12">
 								    		<div class="form-group">
-												  <button id="btn" type="button" class="btn btn-info dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												   郵局 <span class="caret"></span>
-												  </button>
-												  
-												  <ul id="dropdownmenu" class="dropdown-menu">
-												    <li><a>郵局</a></li>
-												    <li><a>ATM</a></li>
-												    <li><a>信用卡</a></li>
-												  </ul>
+												  <select class="btn btn-info dropdown-toggle btn-block"  id="btn" name="select">
+												  	<option value="郵局">郵局</option>	
+													<option value="ATM">ATM</option>
+													<option value="信用卡">信用卡</option>
+												  </select>
 											 </div>
 										</div>	
 								  </div>
@@ -195,47 +193,51 @@
 						      
 						  </div>
 						  
+						
 						  
 						  <div id="menu2" class="tab-pane fade">
 								<div class="panel panel-danger">
+									
 								    <div class="panel-heading">
 								        <h3 class="panel-title">付款資訊</h3>
 								    </div>
 								    <div class="panel-body">
+								   		<c:forEach items="${list}" var="memberlist">
 								       	  <div class="form-group">
 										    <label class="col-sm-2 control-label">付款狀態</label>
 										    <div class="col-sm-10">
-										      <p class="form-control-static">處理中</p>
+										      <p class="form-control-static">${memberlist.status}</p>
 										    </div>
 										  </div>
 										  
 										  <div class="form-group">
 										    <label class="col-sm-2 control-label">付款日期</label>
 										    <div class="col-sm-10">
-										      <p class="form-control-static">XXXX</p>
+										      <p class="form-control-static">${memberlist.date}</p>
 										    </div>
 										  </div>
 										  
 										  <div class="form-group">
 										    <label class="col-sm-2 control-label">付款金額</label>
 										    <div class="col-sm-10">
-										      <p class="form-control-static">XXXX</p>
+										      <p class="form-control-static">${memberlist.sum}</p>
 										    </div>
 										  </div>
 										  
 										  <div class="form-group">
 										    <label class="col-sm-2 control-label">付款方式</label>
 										    <div class="col-sm-10">
-										      <p class="form-control-static">XXXX</p>
+										      <p class="form-control-static">${memberlist.payment}</p>
 										    </div>
 										  </div>
 										  
 										  <div class="form-group">
 										    <label class="col-sm-2 control-label">運送方式</label>
 										    <div class="col-sm-10">
-										      <p class="form-control-static">XXXX</p>
+										      <p class="form-control-static">${memberlist.pick}</p>
 										    </div>
 										  </div>
+									 </c:forEach>
 								    </div>
 								</div>	
 								
@@ -245,22 +247,28 @@
 								    </div>
 								    <div class="panel-body">
 								       <table class="table table-bordered table-hover">
-								  <thead>
-								    <tr>
-								      <th>商品名稱</th> 
-								      <th>數量</th>
-								      <th>小計</th>
-								    </tr>
-								  </thead>
-								  
-								  <tbody>
-								    <tr>
-								      <th scope="row">1</th>
-								      <td>1</td>
-								      <td>2</td>
-								    </tr> 
-								  </tbody>	  
-								</table>     
+										  <thead>
+										    <tr>
+										      <th>商品名稱</th> 
+										      <th>數量</th>
+										      <th>小計</th>
+										    </tr>
+										  </thead>
+										  
+										  <tbody>
+										     <c:forEach items="${list1}" var="list1">
+												  	<c:forEach items="${list1.key}" var="list11">
+												    <tr>
+												      <th scope="row">${list11.name}</th>
+												      <td>${list1.value}</td>
+												      <td>${list11.price * list1.value}</td>
+													<c:set var="sum1" value="${sum1+list11.price * list1.value}"></c:set>
+													
+												    </tr> 
+												    </c:forEach> 
+											  </c:forEach> 
+										   <tbody>	   
+										</table>     
 								    </div>
 								</div>		      
 
@@ -270,6 +278,7 @@
 		</form>
 		</div>
 	</div>
+	
 			 
 		 
 </body>
