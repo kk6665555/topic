@@ -30,4 +30,8 @@
 		      $("#btn").val($(this).text());
 		   });
 	  }
+	function all(){
+		$(".checkbox input[name='checkbox']").prop("checked",true);
+		
+	}
 	

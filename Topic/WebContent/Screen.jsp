@@ -76,7 +76,8 @@
 				<c:forEach items="${list1}" var="list">
 					<div id="gift" class="col-sm-3">	
 						<div id="a1" >
-								<img id="img" src="${list.column1}">
+							
+								<a href="detailed?id=${list.ID}"><img id="img" src="${list.column1}"></a>
 								<div class="overlay">
 							         <a class="info" href="session?id=${list.ID}&op=<%=op %>">加入購物車</a>
 							    </div>

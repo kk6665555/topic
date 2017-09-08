@@ -1,0 +1,53 @@
+﻿div.one-two {
+		margin-left:5%;
+		margin-top:10px;
+        width:40%;
+        float: left;
+        height:280px;
+        font-family:    Arial, Helvetica, sans-serif;
+        font-size:      24px;
+        font-weight:    bold;
+    }
+
+div.one-two-second {
+		margin-left:0%;
+		margin-right:5%;
+		padding-left:2%;		
+        width:50%;
+        background-color:#CCCCCC;
+        color:#666666;
+}
+
+div.intro{
+	display:inline-block;
+	margin-top:30px;
+	margin-left:5%;
+	margin-right:5%;
+	width:90%;
+	font-family:    Arial, Helvetica, sans-serif;
+    font-size:      27px;
+    font-weight:    bold;
+}
+
+.tab-content{
+	background-color:#CCCCCC;
+    color:#000000;
+    padding:5px;  
+}
+#home{
+	width:100%;
+	height:400px;
+}
+#introtext{
+	padding-left:1%;
+ 	width:50%;
+}
+ #googleMap{	
+ 	width:50%;
+	height:100%;
+	float:right;
+}
+
+#bim:hover{
+opacity:0.7;  
+}

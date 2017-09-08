@@ -10,12 +10,11 @@
 	cursor:default;
 }
 #a1 .overlay{
-	width:100%;
-	height:100%;
+
 	position:absolute;
 	overflow:hidden;
-	top:0;
-	left:0;
+	top:135px;
+	left:120px;
 	opacity:0;
 	background-color:rgba(0,0,0,0.5);
 	transition:all .4s ease-in-out
@@ -32,7 +31,7 @@
 	filter:alpha(opacity=0);
 	-webkit-transition:all .2s ease-in-out;
 	transition:all .2s ease-in-out;
-	margin:120px 0 0;
+	margin:0 0 0 0;
 	padding:7px 14px;
 }
 #a1 a.info:hover {
@@ -103,7 +102,4 @@
 	bottom:35px;
 	
 }
-
-
-
 

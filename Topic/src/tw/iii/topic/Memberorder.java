@@ -23,7 +23,7 @@ public class Memberorder extends HttpServlet {
 		String email = request.getParameter("email");
 		String optradio = request.getParameter("optradio");
 		String a = request.getParameter("a");
-		String[] checkbox = request.getParameterValues("checkbox");
+		String[] checkbox=request.getParameterValues("checkbox");
 		StringBuilder sb = new StringBuilder();
 		for(String a1 : checkbox) {
 			sb.append(a1);

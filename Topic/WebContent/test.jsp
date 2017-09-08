@@ -45,7 +45,7 @@
 						      <table class="table table-bordered table-hover">
 								  <thead>
 								    <tr>
-								      <th>全選</th>
+								      <th onclick="all()">全選</th>
 								      <th>圖片</th>
 								      <th>商品名稱</th>
 								      <th>價格</th>
