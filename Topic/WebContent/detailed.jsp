@@ -303,7 +303,7 @@ else {
             </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
 </div>       
-<button id="bim" type="submit" style="background-image:url(button1.png);width:175px;height:42px;"></button>
+<button id="bim" type="submit" style="background-image:url(images/button1.png);width:175px;height:42px;"></button>
 </div>
 
 <div class="intro">
