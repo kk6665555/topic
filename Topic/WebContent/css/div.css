@@ -14,7 +14,7 @@
 	position:absolute;
 	overflow:hidden;
 	top:135px;
-	left:120px;
+	left:30%;
 	opacity:0;
 	background-color:rgba(0,0,0,0.5);
 	transition:all .4s ease-in-out

@@ -45,7 +45,7 @@
 						      <table class="table table-bordered table-hover">
 								  <thead>
 								    <tr>
-								      <th onclick="all()">全選</th>
+								      <th onclick="checkall()">全選</th>
 								      <th>圖片</th>
 								      <th>商品名稱</th>
 								      <th>價格</th>
@@ -189,7 +189,7 @@
 								  </div>
 								</div>
 	
-						      <button id="button" type="submit" form="form" class="btn btn-primary" onclick="nextpage2()">完成</button>
+						      <button id="button" type="submit" form="form" class="btn btn-primary" >完成</button>
 						      
 						  </div>
 						  

@@ -40,7 +40,7 @@ public class Memberorder extends HttpServlet {
 
 
 //		System.out.println(name+":"+phone+":"+homephone+":"+email+":"+optradio+":"+a);
-		int sum=0;
+		int sum = 0;
 		Agriculturalarea ag = null;
 		List<data1> list = null;
 		List<gift> list1 = null;

@@ -321,7 +321,7 @@ else {
         </div>
     </div>
 </div>
-<input name="ConstructionADD" type="text" id="ConstructionADD" size="50" maxlength="50" onchange="codeAddress()"/>
+<input name="ConstructionADD" value="${list1.produceOrg}" type="text" id="ConstructionADD" size="50" maxlength="50" onchange="codeAddress()"/>
 </c:forEach>
 </form>
 <div id="shopping">

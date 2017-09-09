@@ -145,7 +145,7 @@ public class Agriculturalarea {
 			
 			
 			rs=stmt.executeQuery(sql1);
-			while(rs.last()) {
+			if(rs.last()) {
 				data1 date1 = new data1();
 				date1.setID(rs.getString(1));
 				date1.setMemberID(rs.getString(2));
