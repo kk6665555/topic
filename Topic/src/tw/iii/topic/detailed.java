@@ -27,7 +27,7 @@ public class detailed extends HttpServlet {
 				
 			}	
 			request.setAttribute("list1", list1);
-			request.getRequestDispatcher("detailed.jsp").forward(request, response);
+			request.getRequestDispatcher("sign.jsp").forward(request, response);
 	}
 
 

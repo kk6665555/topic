@@ -1,5 +1,5 @@
 ul,li{list-style:none;}
-    #product{height:55px;width:1000px;margin:100px auto 80px 0px;}
+    #product{height:55px;width:1000px;margin:0px 0px 15px 0px;}
     #product .steps{padding-left:0;}
     #product ul li { float:left; height:55px; padding:0 70px 0 50px; line-height:55px; text-align:center; background:url(http://7xnlea.com2.z0.glb.qiniucdn.com/stepbg.png) no-repeat 100% 0 #E4E4E4;font-family: "microsoft yahei";color:#6C6C6C;}
     #product ul li.done { background-position:100% 0px; background-color:#E1E1E1;}
@@ -10,7 +10,8 @@ ul,li{list-style:none;}
     #product ul li.last { border-radius:0 10px 10px 0; }
 #button{
 	float:right;
-}  
+}    
+     
 #dropdownmenu {
 	width:100%;
 }

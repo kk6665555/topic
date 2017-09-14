@@ -22,7 +22,7 @@ public class check extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		String city = request.getParameter("op");
 		Agriculturalarea ag = null;
-		
+		System.out.println(city);
 		List<gift> list1 = null;
 		try {
 			ag = new Agriculturalarea();

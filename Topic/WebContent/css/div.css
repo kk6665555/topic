@@ -103,3 +103,26 @@
 	
 }
 
+#img{
+	
+	height:300px;
+	width:100%;
+}
+#myCarousel{
+	position:relative;
+	left:5%;
+	right:5%;
+	width:90%;
+}
+#h3{
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;	
+}
+
+#googlemap{
+
+	
+}
+
+

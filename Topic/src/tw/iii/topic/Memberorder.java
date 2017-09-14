@@ -17,7 +17,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/Memberorder")
 public class Memberorder extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(false);	
+		HttpSession session = request.getSession(false);
+	
 		if(session.getAttribute("id")!=null) {
 			session.removeAttribute("id");
 		}	
@@ -62,7 +63,7 @@ public class Memberorder extends HttpServlet {
 			}
 			
 			
-			list=ag.check4("1", str, name, phone, homephone, email, optradio, a,"7-11", select, "處理中",sum, strDate);
+			list=ag.check4("1", str, name, phone, homephone, email,a, optradio,"7-11", select, "1",sum, strDate);
 			
 			
 			
@@ -73,7 +74,7 @@ public class Memberorder extends HttpServlet {
 		
 		request.setAttribute("list", list);
 		request.setAttribute("list1", listproduct);
-		request.getRequestDispatcher("test.jsp").forward(request, response);
+		request.getRequestDispatcher("test1.jsp").forward(request, response);
 		
 		
 	}

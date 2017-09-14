@@ -19,7 +19,11 @@
 		$("#one").addClass("current_prev");
 		$("#two").addClass("current");
 		$("#test a[href='#menu1']").tab('show');
-	}	
+	}
+	
+
+	
+	
 	function ons(){
 		 $(".dropdown-menu li a").click(function(){
 		      $("#btn").text($(this).text());
@@ -27,7 +31,9 @@
 		   });
 	  }
 	function checkall(){
-		$('input[name*="checkbox"]').prop('checked', true);
+		 checkboxes = document.getElementsByName('checkbox');
+		  for(var checkbox in checkboxes)
+		    checkbox.checked = true;
 	}
 
 	
